@@ -24,14 +24,17 @@ class MapperBigData extends Mapper<
             // Split each sentence in words. Use whitespace(s) as delimiter (=a space, a tab, a line break, or a form feed)
     		// The split method returns an array of strings
             String[] words = value.toString().split("\\s+");
-            
-            // Iterate over the set of words
-            for(String word : words) {
-            	// Transform word case
-                String cleanedWord = word.toLowerCase();
-                
-                // emit the pair (word, 1)
-                context.write(new Text(cleanedWord), new IntWritable(1));
+
+            //Build 2-grams and emit them
+            for(int i = 0; i<words.length; i++){
+
+                if(i!=0 && i!= words.length - 1){
+
+                    String twogram = words[i-1] + " " + words[i];
+                    twogram = twogram.toLowerCase();
+                    context.write(new Text(twogram), new IntWritable(1));
+
+                }
             }
     }
 }

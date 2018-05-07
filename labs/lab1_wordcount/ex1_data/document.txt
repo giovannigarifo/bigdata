@@ -1,0 +1,3 @@
+Test of the word count program
+The word program is the Hadoop hello word program
+Example document for hadoop word count

@@ -4,6 +4,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -59,7 +60,7 @@ public class DriverBigData extends Configured implements Tool {
     job.setJarByClass(DriverBigData.class);
     
     // Set job input format,the input record is like: <word>\s<word>\t<number>
-    job.setInputFormatClass(KeyValueTextInputFormat.class); //key will be: <word>\s<word> because \t is the default separator
+    job.setInputFormatClass(TextInputFormat.class);
 
     // Set job output format
     job.setOutputFormatClass(TextOutputFormat.class);
@@ -69,7 +70,7 @@ public class DriverBigData extends Configured implements Tool {
     
     // Set map output key and value classes
     job.setMapOutputKeyClass(Text.class);
-    job.setMapOutputValueClass(Text.class);
+    job.setMapOutputValueClass(NullWritable.class);
     
     // Set reduce class
     //job.setReducerClass(ReducerBigData.class);

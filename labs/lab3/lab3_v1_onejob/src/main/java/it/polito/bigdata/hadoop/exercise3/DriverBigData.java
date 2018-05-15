@@ -1,4 +1,4 @@
-package it.polito.bigdata.hadoop.exercise2;
+package it.polito.bigdata.hadoop.exercise3;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -7,7 +7,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
@@ -24,31 +24,21 @@ public class DriverBigData extends Configured implements Tool {
 
     Path inputPath;
     Path outputDir;
-    String filter_strPrefix; //the filter used to select only a subset of the words, the ones which begin with strPrefix
+    int numberOfReducers;
 	int exitCode;  
 	
-	// Parse the parameters, no reducerers: map only job
-    if(args.length != 3){
-
-        System.out.println("\n[ERROR] wrong parameter number. use: <input-path> <output-dir> filter_strPrefix");
-        System.exit(1);
-    }
-
-
+	// Parse the parameters
+    numberOfReducers = 1;
     inputPath = new Path(args[0]);
     outputDir = new Path(args[1]);
-    filter_strPrefix = new String(args[2]);
     
     Configuration conf = this.getConf();
-
-    //set a configuration parameter
-    conf.set("strPrefix", filter_strPrefix);
 
     // Define a new job
     Job job = Job.getInstance(conf); 
 
     // Assign a name to the job
-    job.setJobName("Lab #2 - filter");
+    job.setJobName("Lab #3 - v1 with only one job");
     
     // Set path of the input file/folder (if it is a folder, the job reads all the files in the specified folder) for this job
     FileInputFormat.addInputPath(job, inputPath);
@@ -60,8 +50,7 @@ public class DriverBigData extends Configured implements Tool {
     job.setJarByClass(DriverBigData.class);
     
     // Set job input format
-    job.setInputFormatClass(KeyValueTextInputFormat.class);
-    //conf.set("mapreduce.input.keyvaluelinerecordreader.key.value.separator", "\t");
+    job.setInputFormatClass(TextInputFormat.class);
 
     // Set job output format
     job.setOutputFormatClass(TextOutputFormat.class);
@@ -74,14 +63,14 @@ public class DriverBigData extends Configured implements Tool {
     job.setMapOutputValueClass(IntWritable.class);
     
     // Set reduce class
-    //job.setReducerClass(ReducerBigData.class);
+    job.setReducerClass(ReducerBigData.class);
         
     // Set reduce output key and value classes
-    //job.setOutputKeyClass(Text.class);
-    //job.setOutputValueClass(IntWritable.class);
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
 
     // Set number of reducers
-    job.setNumReduceTasks(0);
+    job.setNumReduceTasks(numberOfReducers);
     
     
     // Execute the job and wait for completion

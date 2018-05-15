@@ -2,6 +2,11 @@
 
 Repository that contains all the projects developed for the BigData course of the Politecnico di Torino
 
+## create new project in intellij
+
+create a new project from source, import the libraries trough the "project structure" menu: the libraries are in the `labs/lib` folder 
+
+
 ## How to submit a MapReduce job to the bigdata@polito Hadoop cluster
 
 * Compile the MapReduce Application obtaining the jar file.
@@ -31,10 +36,4 @@ The whole job history is available at https://ma1-bigdata.polito.it:19890/jobhis
 A Kerberos ticket is required to have access to other servers of the bigdatalab other that the gateway.
 
 * `sudo apt install krb5-user` and then follow the [guide](https://bigdata.polito.it/content/access-instructions) 
-
-
-
-
-
-
 

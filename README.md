@@ -37,3 +37,23 @@ A Kerberos ticket is required to have access to other servers of the bigdatalab 
 
 * `sudo apt install krb5-user` and then follow the [guide](https://bigdata.polito.it/content/access-instructions) 
 
+
+## How to submit a Spark job locally or on the cluster
+
+Differently from MapReduce, a spark job can be executed locally or on the hadoop cluster using the YARN scheduler.
+
+To submit a spark application, the `spark-submit` CLI must be used. It accepts various parameters, values separated using space and not equal
+
+
+* `--class` class of the jar to be executed that contains the main
+* `--master` used to specify the scheduler. Values: `yarn` to execture the application on the cluster, `loca` to execute on the local workstation.
+* `--deploy-mode` used to specify where the driver must be executed. values: `client` or `cluster`. Note that all the local variable of the driver will be istantiated in the driver, in cluster mode the maximum amout of main memry for each executor is 2 to 8GB, better to use client mode if the workstation has more than 8GB of ram.
+* `--num-executors`, default is 2
+* `--executor-cores`, default is 1
+* `--executor-memory`, default is 1GB, main memory for each executor that runs on the cluster
+* `--driver-cores`
+* `--driver-memory`
+
+example: 
+
+```spark-submit --class it.polito.bigdata.spark.DriverMyApp --deploy-mode cluster --master yarn MyApp.jar <arguments>```

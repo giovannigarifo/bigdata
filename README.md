@@ -31,13 +31,6 @@ all the relative path in input and output file are related to the home directory
 The whole job history is available at https://ma1-bigdata.polito.it:19890/jobhistory/, kerberos authentication required: obtain a 1 day ticket for the local machine using `kinit s241915`
 
 
-## How to Configure Kerberos authentication
-
-A Kerberos ticket is required to have access to other servers of the bigdatalab other that the gateway.
-
-* `sudo apt install krb5-user` and then follow the [guide](https://bigdata.polito.it/content/access-instructions) 
-
-
 ## How to submit a Spark job locally or on the cluster
 
 Differently from MapReduce, a spark job can be executed locally or on the hadoop cluster using the YARN scheduler.
@@ -57,3 +50,10 @@ To submit a spark application, the `spark-submit` CLI must be used. It accepts v
 example: 
 
 ```spark-submit --class it.polito.bigdata.spark.DriverMyApp --deploy-mode cluster --master yarn MyApp.jar <arguments>```
+
+
+## How to Configure Kerberos authentication
+
+A Kerberos ticket is required to have access to other servers of the bigdatalab other that the gateway.
+
+* `sudo apt install krb5-user` and then follow the [guide](https://bigdata.polito.it/content/access-instructions) 

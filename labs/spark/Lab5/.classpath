@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/hadoop-client-2.6.0-cdh5.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/hadoop-common-2.6.0-cdh5.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/hadoop-mapreduce-client-core-2.6.0-cdh5.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/spark-core_2.11-2.2.0.cloudera2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

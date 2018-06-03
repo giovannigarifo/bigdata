@@ -51,6 +51,17 @@ example:
 
 ```spark-submit --class it.polito.bigdata.spark.DriverMyApp --deploy-mode cluster --master yarn MyApp.jar <arguments>```
 
+example with Eclipse Oxygen and local installation of spark:
+
+1) in Eclipse, File->Export->Jar file, configure and select the main class
+
+2) launch the job locally, from the output directory of the jar:
+```
+/opt/spark/bin/spark-submit --class it.polito.bigdata.spark.example.SparkDriver --deploy-mode client --master local lab5_sol.jar <args>
+
+```
+
+
 
 ## How to Configure Kerberos authentication
 

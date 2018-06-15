@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/hadoop-client-2.6.0-cdh5.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/hadoop-common-2.6.0-cdh5.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/hadoop-mapreduce-client-core-2.6.0-cdh5.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/scala-library-2.11.8.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/scala-reflect-2.11.8.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/spark-catalyst_2.11-2.2.0.cloudera2.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/spark-core_2.11-2.2.0.cloudera2.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/spark-mllib_2.11-2.2.0.cloudera2.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/spark-mllib-local_2.11-2.2.0.cloudera2.jar"/>
+	<classpathentry kind="lib" path="/home/giovanni/Workspace/BD/bigdata/labs/lib/spark-sql_2.11-2.2.0.cloudera2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

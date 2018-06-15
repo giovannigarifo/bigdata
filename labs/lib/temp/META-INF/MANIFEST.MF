@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Implementation-Title: Spark Project ML Library
+Implementation-Version: 2.2.0.cloudera2
+Archiver-Version: Plexus Archiver
+Built-By: jenkins
+Specification-Vendor: Cloudera
+Specification-Title: Spark Project ML Library
+Implementation-Vendor-Id: org.apache.spark
+Implementation-Vendor: Cloudera
+Created-By: Apache Maven 3.5.0
+Build-Jdk: 1.8.0_121
+Specification-Version: 2.2.0.cloudera2
+Implementation-URL: http://spark.apache.org/
+

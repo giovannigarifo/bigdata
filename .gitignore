@@ -3,3 +3,4 @@ temp
 lab*.jar
 Lab*.jar
 main.jar
+lib/temp/*

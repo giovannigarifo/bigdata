@@ -1,6 +1,6 @@
 # bigdata
 
-Repository that contains all the projects developed for the BigData course of the Politecnico di Torino
+Repository that contains all the projects developed during the laboratories of the BigData course of the Politecnico di Torino. In the wiki section you can find summaries of the lectures, cheatsheets and code samples. 
 
 ## create new project in intellij
 

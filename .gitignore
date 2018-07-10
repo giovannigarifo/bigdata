@@ -4,3 +4,6 @@ lab*.jar
 Lab*.jar
 main.jar
 lib/temp/*
+bin/
+out/
+target/

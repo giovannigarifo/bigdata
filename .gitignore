@@ -1,2 +1,5 @@
 .idea
-*.jar
+temp
+lab*.jar
+Lab*.jar
+main.jar

@@ -1,8 +1,10 @@
+A [comprehensive wiki](https://github.com/giovannigarifo/bigdata/wiki) with theory summaries and code snippets is available at this [link](https://github.com/giovannigarifo/bigdata/wiki). It can be used as a reference guide at the exam.
+
 # bigdata
 
-Repository that contains all the projects developed during the laboratories of the BigData course of the Politecnico di Torino. In the wiki section you can find summaries of the lectures, cheatsheets and code samples. 
+Repository that contains all the projects developed during the laboratories of the "Big Data: Architectures and Data Analytics" course of the Politecnico di Torino. In the [wiki section](https://github.com/giovannigarifo/bigdata/wiki) you can find summaries of the lectures, cheatsheets and code samples. 
 
-## create new project in intellij
+## How to create a new project in IntelliJ starting from the sources
 
 create a new project from source, import the libraries trough the "project structure" menu: the libraries are in the `labs/lib` folder 
 
@@ -11,7 +13,7 @@ create a new project from source, import the libraries trough the "project struc
 
 * Compile the MapReduce Application obtaining the jar file.
 
-In Intellij IDEA, go to File->Project Strcture-> Artifacts -> generate artifacts, select as main class the Driver.
+In Intellij IDEA, go to File->Project Structure-> Artifacts -> generate artifacts, select as main class the Driver.
 
 * scp the jar file to the gateway using: `scp <idea-project-folder>/out/artifacts/main_jar/main.jar s241915@bigdatalab.polito.it:/home/bigdata-01QYD/s241915/`
 
